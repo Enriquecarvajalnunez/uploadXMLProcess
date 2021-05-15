@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
 
-Route::post('/generar', 'Controlador@subirArchivo')->name('generar.post');
+Route::post('/generar','Controlador@create');
 
 

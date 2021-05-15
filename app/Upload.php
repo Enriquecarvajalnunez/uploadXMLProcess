@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;//IOFactory adivina el tipo de plantilla con la que se trabaja
@@ -45,10 +44,10 @@ class Upload extends Model
         }
 
         $Header.= $Piepagina;        
-        $report_output = 'C:/xampp/htdocs/mini-master/archivos/'.$filename.'.txt';
+        $report_output = 'C:/laragon/www/uploadXMLProcess/public/archivos/'.$filename.'.txt';
         file_put_contents($report_output,$Header);  
         
-        echo 'PROCESO FINALIZADO CON EXITO !!';
+        echo '<script language="javascript">alert("Proceso terminado satisfactoriamente !!");</script>';
     }
     
     //Función para concatenar espacios

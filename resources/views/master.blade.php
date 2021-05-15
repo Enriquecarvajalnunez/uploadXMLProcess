@@ -6,7 +6,7 @@
 <body>
     <div class="overlay"></div>
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="{{ asset('asset/mp4/bg.mp4') }}" type="video/mp4">
+    <source src="{{ asset('asset/mp4/Honda CB190R.mp4') }}">	
   </video>
 
   <div class="masthead">
@@ -19,7 +19,7 @@
                         <p class="mb-5">Procese los datos del archivo de excel a archivo de texto plano !</p>
                             
                         <!--Formulario para subir archivos -->
-                        <form action=" " method="post" enctype="multipart/form-data">
+                        <form action="{{ action('Controlador@create') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field()}}
                             <label for="fileSelect">Filename:</label>
                             <input type="file" name="photo" id="fileSelect" onchange="nombre(this.value)">
@@ -30,7 +30,7 @@
                                     <button class="btn btn-primary" type="submit">PROCESAR !</button>
                                 </div>
                             </div>
-                            <p><strong>Note:</strong> Only .xls formats allowed to a max size of 5 MB.</p>
+                            <p><strong>Note:</strong> únicamente formatos .xls peso máximo de 5 MB.</p>
                         </form>
                     </div>
                 </div>

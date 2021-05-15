@@ -31,7 +31,7 @@ class FormUpload extends Model
                 
                 // Verify MYME type of the file
                 if(in_array($filetype, $allowed)){
-                    $this->rutaArchivo = "C:/xampp/htdocs/mini-master/archivos/" . $this->filename;
+                    $this->rutaArchivo = "C:/laragon/www/uploadXMLProcess/public/archivos/" . $this->filename;
                     // Check whether file exists before uploading it
                     if(file_exists($this->rutaArchivo)){
                         echo $this->filename . " is already exists.";

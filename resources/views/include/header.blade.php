@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Coming Soon - Start Bootstrap Theme</title>
+    <title>Procesamiento excel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('asset/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
