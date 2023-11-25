@@ -20,16 +20,41 @@
                             
                         <!--Formulario para subir archivos -->
                         <form action="{{ action('Controlador@create') }}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field()}}
-                            <label for="fileSelect">Filename:</label>
-                            <input type="file" name="photo" id="fileSelect" onchange="nombre(this.value)">
-                            <label for="filename">Rename file</label>
-                            <input type="text" name="filename" id="filename"><br><br>
-                            <div class="input-group input-group-newsletter">                                
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit">PROCESAR !</button>
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="fileSelect">Filename:</label>
+                                <input type="file" name="photo" id="fileSelect" onchange="nombre(this.value)" class="form-control-file">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="filename">Rename file</label>
+                                <input type="text" name="filename" id="filename" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Formas de transporte:</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="mar" name="formatos[]" value="mar">
+                                    <label class="form-check-label" for="mar">marítimo</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="currier" name="formatos[]" value="currier">
+                                    <label class="form-check-label" for="currier">Currier</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="aereo" name="formatos[]" value="aereo">
+                                    <label class="form-check-label" for="aereo">Aereo</label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary btn-block btn-sm" type="submit">PROCESAR!</button>
+                                    </div>
+                            </div>
+
+
                             <p><strong>Note:</strong> únicamente formatos .xls peso máximo de 5 MB.</p>
                         </form>
                     </div>

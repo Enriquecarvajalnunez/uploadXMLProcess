@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 
 class Controlador extends Controller
 {
-    public function create(){          
+    public function create(Request $request){  
+
+        $filename = $request->input('filename');
+
+        print_r($filename);exit();
+
         $formUpload = new FormUpload();
 
         if($formUpload->getRutaArchivo() != null && $formUpload->getFilename() != null){
