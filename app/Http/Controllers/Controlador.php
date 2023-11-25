@@ -12,7 +12,6 @@ class Controlador extends Controller
 
         $filename = $request->input('filename');
 
-        print_r($filename);exit();
 
         $formUpload = new FormUpload();
 

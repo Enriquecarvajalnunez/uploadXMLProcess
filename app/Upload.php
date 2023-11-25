@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\IOFactory;//IOFactory adivina el tipo de plantilla con la que se trabaja
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
@@ -11,7 +12,11 @@ class Upload extends Model
                 
     public function __construct($rutaArchivo, $filename)
     {     
-        $documento = IOFactory::load($rutaArchivo);//lectura del archivo
+
+        $rutaArchivo = storage_path('app/' . $rutaArchivo);
+
+        // Cargas el archivo desde el sistema de archivos de Laravel con PhpSpreadsheet
+        $documento = IOFactory::load($rutaArchivo);
 
         $worksheet = $documento->getActiveSheet();//obtiene hoja activa
         $Header = '››' .$this->espacios(3).'809224'.$this->espacios(49).'PA01XS0317A0'.$this->espacios(22).'Y33Y'.$this->espacios(22);
