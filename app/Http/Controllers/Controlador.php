@@ -11,13 +11,14 @@ class Controlador extends Controller
     public function create(Request $request){  
 
         $filename = $request->input('filename');
+        $opciones = $request->input('formatos');
 
 
         $formUpload = new FormUpload();
 
         if($formUpload->getRutaArchivo() != null && $formUpload->getFilename() != null){
             $filename = isset($_POST["filename"]) ? $_POST["filename"] : explode('.', $formUpload->getFilename())[0];
-            new Upload($formUpload->getRutaArchivo(), $filename);
+            new Upload($formUpload->getRutaArchivo(), $filename, $opciones);
         }
     }        
 }

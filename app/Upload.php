@@ -10,8 +10,10 @@ use Illuminate\Database\Eloquent\Model;
 class Upload extends Model
 {
                 
-    public function __construct($rutaArchivo, $filename)
+    public function __construct($rutaArchivo, $filename, $options)
     {     
+
+        //aqui en options lo recorre con un foreach y dependiendo si es mar, currier se realiza la accion necesaria
 
         $rutaArchivo = storage_path('app/' . $rutaArchivo);
 

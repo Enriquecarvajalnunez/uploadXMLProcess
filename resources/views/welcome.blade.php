@@ -30,7 +30,7 @@
                                 <button class="btn btn-primary" type="submit">PROCESAR !</button>
                             </div>
                         </div>
-                        <p><strong>Note:</strong> Only .xls formats allowed to a max size of 5 MB.</p>
+                        <p><strong>Nota:</strong> Only .xls formats allowed to a max size of 5 MB.</p>
                     </form>
                     </div>
                 </div>

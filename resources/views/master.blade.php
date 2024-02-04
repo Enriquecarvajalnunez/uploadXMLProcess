@@ -55,7 +55,7 @@
                             </div>
 
 
-                            <p><strong>Note:</strong> únicamente formatos .xls peso máximo de 5 MB.</p>
+                            <p><strong>Nota:</strong> únicamente formatos .xls peso máximo de 5 MB.</p>
                         </form>
                     </div>
                 </div>
