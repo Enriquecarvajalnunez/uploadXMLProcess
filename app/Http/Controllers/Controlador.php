@@ -20,6 +20,13 @@ class Controlador extends Controller
             $filename = isset($_POST["filename"]) ? $_POST["filename"] : explode('.', $formUpload->getFilename())[0];
             new Upload($formUpload->getRutaArchivo(), $filename, $opciones);
         }
+    }
+
+    //funcion para descarga de archivo
+    public function download($filename){
+        $formUpload = new FormUpload();
+        $path = storage_path('app/' . $formUpload->getRutaArchivo() . '/'.$filename);        
+        return response()->download($path);        
     }        
 }
 

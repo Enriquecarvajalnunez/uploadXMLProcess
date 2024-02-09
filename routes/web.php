@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::post('/generar','Controlador@create');
 
-
+Route::get('download/{filename}','Controlador@download')->name('download');
