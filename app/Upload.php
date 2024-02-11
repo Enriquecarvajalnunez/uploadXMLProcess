@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use App\Prueba;
+use App\Http\Controllers\Controlador;
 
 class Upload extends Model
 {
@@ -13,7 +16,7 @@ class Upload extends Model
     {             
         
         //aqui en options lo recorre con un foreach y dependiendo si es mar, currier se realiza la accion necesaria
-        $rutaArchivo = storage_path('app/' . $rutaArchivo);
+        $rutaArchivo = storage_path('app/' . $rutaArchivo);        
 
         // Cargas el archivo desde el sistema de archivos de Laravel con PhpSpreadsheet
         $documento = IOFactory::load($rutaArchivo);
@@ -47,16 +50,21 @@ class Upload extends Model
         }
                 
         $Header.= $Piepagina;        
-        $report_output = 'C:/inetpub/wwwroot/uploadXMLProcess/storage/app/archivos'.$filename.'.txt';
+        $report_output = 'C:/inetpub/wwwroot/uploadXMLProcess/storage/app/'.$filename.'.txt';        
         file_put_contents($report_output,$Header);  
-        
-        echo '<script language="javascript">alert("Proceso terminado satisfactoriamente !!");</script>';
+                
+        echo '<script language="javascript">alert("Proceso terminado satisfactoriamente !!");</script>';              
     }
-    
+
+    function llamado($filename){
+        return redirect()->route('download',['filename'=>$filename]);      
+    }
+       
+
     //Función para concatenar espacios
     function espacios($nespacios)
     {
         return str_pad(chr(32), $nespacios, chr(32), STR_PAD_RIGHT);
-    }
+    } 
     
 }

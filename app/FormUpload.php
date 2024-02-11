@@ -36,13 +36,12 @@ class FormUpload extends Model
                 print_r("error en el tamaño del archivo");exit();
             }
             $this->informationStorage($uploadFile);
-        }
+        }        
     }
-            // Check if file was uploaded without errors
-          
+              
     public function informationStorage($uploadFile){
         $this->filename    = $uploadFile->getClientOriginalName();
-        $this->rutaArchivo = "archivos/" .Str::random(20) . $this->filename;
+        $this->rutaArchivo = "archivos/" .Str::random(10) . $this->filename;            
         Storage::put($this->rutaArchivo, file_get_contents($uploadFile->getRealPath()));
         echo "archivo cargado con exito";
     }
