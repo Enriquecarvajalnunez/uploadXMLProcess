@@ -6,7 +6,7 @@
 <body>
     <div class="overlay"></div>
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="{{ asset('asset/mp4/Honda CB190R.mp4') }}">	
+    <source src="{{ asset('asset/mp4/Honda CB190R.mp4') }}">
   </video>
 
   <div class="masthead">
@@ -15,9 +15,9 @@
             <div class="row h-100">
                 <div class="col-12 my-auto">
                     <div class="masthead-content text-white py-5 py-md-0">
-                        <h1 class="mb-3">Procesamiento de datos !</h1>
-                        <p class="mb-5">Procese los datos del archivo de excel a archivo de texto plano !</p>
-                            
+                        <h2 class="mb-3">Procesamiento de datos postventa motos</h2>
+                        <p class="mb-5">Procese los datos de excel a archivo de texto plano para importación en american Honda</p>
+
                         <!--Formulario para subir archivos -->
                         <form action="{{ action('Controlador@create') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
@@ -27,15 +27,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="filename">Rename file</label>
+                                <label for="filename">Renombrar archivo</label>
                                 <input type="text" name="filename" id="filename" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="filename">Numero de pedido</label>
+                                <input type="text" name="pedido" id="pedido" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label>Formas de transporte:</label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="mar" name="formatos[]" value="mar">
-                                    <label class="form-check-label" for="mar">marítimo</label>
+                                    <label class="form-check-label" for="mar">Maritimo</label>
                                 </div>
 
                                 <div class="form-check form-check-inline">
@@ -54,13 +59,12 @@
                                     </div>
                             </div>
 
-
-                            <p><strong>Nota:</strong> únicamente formatos .xls peso máximo de 5 MB.</p>
+                            <p><strong>Note:</strong> únicamente formatos .xls peso máximo de 5 MB.</p>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
