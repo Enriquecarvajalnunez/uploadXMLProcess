@@ -35,13 +35,14 @@ class FormUpload extends Model
             if($uploadFile->getSize() > $maxSize){
                 print_r("error en el tamaño del archivo");exit();
             }
+			//dd($uploadFile);
             $this->informationStorage($uploadFile);
         }        
     }
               
-    public function informationStorage($uploadFile){
+    public function informationStorage($uploadFile){		
         $this->filename    = $uploadFile->getClientOriginalName();
-        $this->rutaArchivo = "archivos/" .Str::random(10) . $this->filename;            
+        $this->rutaArchivo = "archivos/" .Str::random(10) . $this->filename;   		
         Storage::put($this->rutaArchivo, file_get_contents($uploadFile->getRealPath()));
         echo "archivo cargado con exito";
     }
